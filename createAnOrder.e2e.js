@@ -1,0 +1,132 @@
+const page = require('../../page');
+const helper = require('../../helper');
+
+
+describe('Ordering a taxi', () => {
+    it('Should enter the to and from address', async () => {
+    await browser.url(`/`)
+    const fromField = await $(page.fromField);
+    await fromField.setValue('East 2nd Street, 601');
+    const toField = await $(page.toField);
+    await toField.setValue('1300 1st St');
+    const callATaxi = await $(page.callATaxiButton);
+    await callATaxi.waitForDisplayed();
+    await expect(callATaxi).toBeExisting();
+ })
+
+it('Should select a Supportive plan car', async () => {
+    await browser.url(`/`)
+    await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
+    const supportiveCarOption= helper.supportiveCarSelection();
+    await helper.supportiveCarSelection();
+    const supportiveSelection = await $('.active');
+    await expect(supportiveSelection).toBePresent();
+ })
+
+        it('Should fill in and save the phone number', async () => {
+        await browser.url(`/`)
+        await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
+        const supportiveCarOption= helper.supportiveCarSelection();
+        await helper.supportiveCarSelection();
+        const phoneNumber = helper.getPhoneNumber("+1");
+        await page.submitPhoneNumber(phoneNumber);
+        await expect(await helper.getElementByText(phoneNumber)).toBeExisting();
+        })
+
+    it('Should add and save a credit card', async () => {
+        await browser.url(`/`)
+        await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
+        await helper.getToPaymentMethod();
+        const addCardBtn = $(page.addCardButton);
+        await addCardBtn.click();
+        const cardNumberInputBox = $(page.cardNumber);
+        await cardNumberInputBox.setValue(helper.getCardnumber());
+        const cvvCodeBox = $(page.cvvNumber);
+        await cvvCodeBox.setValue(helper.getCvvCode());
+        const clickToActivateLinkButton = $(page.clickAwayToActivateLinkButton);
+        await clickToActivateLinkButton.click();
+        const linkBtn = $(page.linkButton);
+        await linkBtn.click();
+        const closePaymentMethodWindow = $(page.closePaymentButton);
+        await closePaymentMethodWindow.click(); 
+        const payType = await $('.pp-value-text');
+        const payTypeText = await payType.getText();
+        await expect(payTypeText).toBe('Card');
+        })
+
+        it('Should write a message for the driver', async () => {
+            await browser.url(`/`)
+            await page.fillAddresses('East 2nd Street, 601', '1300 1st St')
+            const supportiveCarOption= helper.supportiveCarSelection();
+            await helper.supportiveCarSelection();
+            const messageToTheDriverBox = $('//input[@name="comment"]');
+            await messageToTheDriverBox.setValue('Get some whiskey');
+            const driverMessageInput = await $('#comment').getValue();
+            await expect(driverMessageInput).toBe('Get some whiskey');
+            })
+
+        it('Should order a Blanket and handkerchiefs', async () => {
+            await browser.url(`/`)
+            await page.fillAddresses('East 2nd Street, 601', '1300 1st St')
+            const orderRequirementsButton = $('.reqs-head');
+            await orderRequirementsButton.click();
+            const iceCreamBucketButton = $('div=Ice cream bucket');
+            await iceCreamBucketButton.click();
+            const blanketAndHandkerchiefsButton = $('.r-sw');
+            await blanketAndHandkerchiefsButton.click();
+            await expect(blanketAndHandkerchiefsButton).toBeEnabled();
+            })
+
+        it('Should show the car search modal', async () => {
+            await browser.url(`/`)
+            await page.fillAddresses('East 2nd Street, 601', '1300 1st St')
+            const phoneNumber = helper.getPhoneNumber("+1");
+            await page.submitPhoneNumber(phoneNumber);
+            await helper.getToPaymentMethod();
+            const addCardBtn = $(page.addCardButton);
+            await addCardBtn.click();
+            const cardNumberInputBox = $(page.cardNumber);
+            await cardNumberInputBox.click();
+            await cardNumberInputBox.setValue(helper.getCardnumber());
+            const cvvCodeBox = $(page.cvvNumber);
+            await cvvCodeBox.setValue(helper.getCvvCode());
+            const clickToActivateLinkButton = $(page.clickAwayToActivateLinkButton);
+            await clickToActivateLinkButton.click();
+            const linkBtn = $(page.linkButton);
+            await linkBtn.click();
+            const closePaymentMethodWindow = $(page.closePaymentButton);
+            await closePaymentMethodWindow.click();
+            const enterTheNumberAndOrderButton =$(page.numberAndOrderButton);
+            await enterTheNumberAndOrderButton.click();
+            const carSearchModalWindow =$('.order-body');
+            await expect(carSearchModalWindow).toBeExisting();
+            })
+
+
+        it('Should show the driver info', async () => {
+            await browser.url(`/`)
+            await page.fillAddresses('East 2nd Street, 601', '1300 1st St')
+            const phoneNumber = helper.getPhoneNumber("+1");
+            await page.submitPhoneNumber(phoneNumber);
+            await helper.getToPaymentMethod();
+            const addCardBtn = $(page.addCardButton);
+            await addCardBtn.click();
+            const cardNumberInputBox = $(page.cardNumber);
+            await cardNumberInputBox.click();
+            await cardNumberInputBox.setValue(helper.getCardnumber());
+            const cvvCodeBox = $(page.cvvNumber);
+            await cvvCodeBox.setValue(helper.getCvvCode());
+            const clickToActivateLinkButton = $(page.clickAwayToActivateLinkButton);
+            await clickToActivateLinkButton.click();
+            const linkBtn = $(page.linkButton);
+            await linkBtn.click();
+            const closePaymentMethodWindow = $(page.closePaymentButton);
+            await closePaymentMethodWindow.click();
+            const enterTheNumberAndOrderButton =$(page.numberAndOrderButton);
+            await enterTheNumberAndOrderButton.click();
+            await browser.pause(45000);
+            const driverInfoBox =$('.order-body');
+            await expect(driverInfoBox).toBeExisting();
+            })
+    
+})
