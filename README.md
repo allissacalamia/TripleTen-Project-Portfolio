@@ -5,7 +5,6 @@ Welcome to my Automated Testing Sprint Projects repository! This repository show
 Project: createAnOrder.e2e.js 
 This project focuses on implementing a comprehensive suite of unit tests to ensure the reliability and stability of the software. It utilizes Selenium to facilitate easy test creation, execution, and result analysis. The project follows industry best practices for test-driven development (TDD) and provides extensive documentation on writing effective test cases. The repository includes the sample code for this sprint. 
 
-Project: getHandlers.test.js/ putHandlers.test.js/ pushHandlers.test.js/ deleteHandlers.test.js
-This project aims to achieve end-to-end testing for a complex software system. It focuses on simulating real-world user interactions and validating the functionality across various user scenarios. The project utilizes [testing framework/tool] to create and execute automated tests for user interfaces, APIs, and backend systems. The repository includes test scripts, test data, and instructions for running the tests locally or integrating them into the CI/CD pipeline.
-
+Project: getHandlers.test.js/ putHandlers.test.js/ postHandlers.test.js/ deleteHandlers.test.js
+This project aims to achieve end-to-end testing for a complex software system. It focuses on simulating real-world user interactions and validating the functionality across various user scenarios. The project utilizes Node.js to create and execute automated tests for user interfaces, APIs, and backend systems. The repository includes the sample code for this sprint. 
 
