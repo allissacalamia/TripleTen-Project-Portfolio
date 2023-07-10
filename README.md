@@ -2,7 +2,7 @@
 
 Welcome to my Testing Sprint Projects repository! This repository showcases testing projects that were developed during dedicated sprints. These projects include advanced techniques, frameworks, and tools to enhance software quality. This README file serves as a guide to understanding the purpose, features, and usage of each project. 
 
-Project 1: Testing the Urban Routes app. 
+Project 1: Testing the Urban Routes web application. 
 In this project I tested the basics of the Urban Routes app and reported all bugs in Jira. The repository includes the Jira project link for this sprint.  
 
 Project 2: Creating a mindmap and a flowchart, as well as designing test cases for calculating travel time and cost for the Urban Routes web application. 
