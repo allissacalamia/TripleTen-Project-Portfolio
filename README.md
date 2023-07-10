@@ -2,7 +2,9 @@
 
 Welcome to my Automated Testing Sprint Projects repository! This repository showcases a few automated testing projects that were developed during dedicated sprints. These projects include advanced techniques, frameworks, and tools to enhance software quality. This README file serves as a guide to understanding the purpose, features, and usage of each project. 
 
-Project 5: Using SQL and Terminal: determine which requests came from a particular IP address, investigate bugs by examining logs for error codes, and find, calculate, and sort numbers in a database of taxi rides in Chicago. The repository includes the Google doc for this sprint. 
+Project 4: In this project I designed tests as a checklist to cover the features received for testing, tested the API through Postman, and created bug reports in Jira for any bugs found. The repository includes the Google doc for this sprint. 
+
+Project 5: In this project I used SQL and Terminal to determine which requests came from a particular IP address, investigate bugs by examining logs for error codes, and find, calculate, and sort numbers in a database of taxi rides in Chicago. The repository includes the Google doc for this sprint. 
 
 Project 6: Testing the Andriod mobile application Urban Lunch. 
 In this project I created test cases in google sheets, executed the tests using Andriod Studio, and reported bugs in Jira. The repository includes the Google doc for this sprint. 
