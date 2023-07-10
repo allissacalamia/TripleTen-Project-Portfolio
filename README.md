@@ -2,6 +2,9 @@
 
 Welcome to my Automated Testing Sprint Projects repository! This repository showcases a few automated testing projects that were developed during dedicated sprints. These projects include advanced techniques, frameworks, and tools to enhance software quality. This README file serves as a guide to understanding the purpose, features, and usage of each project. 
 
+Project 2: Creating a mindmap and a flowchart for the Urban Routes web application and designing test cases for calculating travel time and cost for the Urban Routes web application. 
+In this project I analyzed and decomposed the requirements, partition equivalence classes, and design several basic test cases for the Urban Routes web application.The repository includes the Google doc for this sprint.  
+
 Project 3: Testing the web application: Urban Routes. 
 In this project I wrote test documentation to implement new features ie. Carsharing. I then reported any bugs found on new and existing features in Jira. I then used Charles Proxy to create a new feature: an aerotaxi option. I then tested the new aerotaxi feature and reported all bugs found in Jira. The repository includes the Google doc for this sprint. 
 
